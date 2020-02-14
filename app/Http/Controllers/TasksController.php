@@ -12,8 +12,13 @@ class TasksController extends Controller
         return Task::all();
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return "OK";
+        $task = Task::create([
+            'name'=>$request->input('name'),
+            'complete'=>$request->input('complete')
+        ]);
+
+        return $task;
     }
 }
