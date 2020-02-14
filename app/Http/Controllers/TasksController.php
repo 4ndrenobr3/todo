@@ -2,31 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
     public function index()
     {
-        $tasks = [
-            [
-                "id" => 1,
-                "nome" => "Estudar PHP",
-                "complete" => true
-            ],
-            [
-                "id" => 2,
-                "nome" => "Estudar Laravel",
-                "complete" => false
-            ],
-            [
-                "id" => 3,
-                "nome" => "Estudar Vue",
-                "complete" => false
-            ]
-        ];
-
-        return $tasks;
+        return Task::all();
     }
 
     public function store()
